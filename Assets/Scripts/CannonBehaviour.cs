@@ -35,7 +35,7 @@ public class CannonBehaviour : MonoBehaviour
     {
         ui.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
 
     }
@@ -44,7 +44,7 @@ public class CannonBehaviour : MonoBehaviour
     {
         ui.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
     }
