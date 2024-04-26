@@ -30,7 +30,7 @@ public class WhaleDive : MonoBehaviour
     public void HideUI()
     {
         ui.SetActive(false);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
     }
@@ -38,7 +38,7 @@ public class WhaleDive : MonoBehaviour
     public void ShowUI()
     {
         ui.SetActive(true);
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
 

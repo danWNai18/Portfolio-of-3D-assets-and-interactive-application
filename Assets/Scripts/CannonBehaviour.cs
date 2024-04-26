@@ -5,7 +5,9 @@ using UnityEngine;
 public class CannonBehaviour : MonoBehaviour
 {
 
-    public GameObject ui; 
+    public GameObject ui;
+    public ParticleSystem smoke;
+    public AudioClip cannonShot;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,33 +28,32 @@ public class CannonBehaviour : MonoBehaviour
         }
     }
 
-    public void ShootCannon()
-    {
-
-    }
-
     public void HideUI() 
     {
         ui.SetActive(false);
-
-        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ShowUI()
     {
         ui.SetActive(true);
-
+        Cursor.lockState = CursorLockMode.Confined;
         //Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
     }
 
+    public void ShootCannon()
+    {
+        smoke.Play();
+        gameObject.GetComponent<AudioSource>().PlayOneShot(cannonShot);
+    }
+
     public void PressYes()
     {
         HideUI();
-        //ShootCannon();
+        ShootCannon();
     }
 
     public void PressNo()
