@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WhaleDive : MonoBehaviour
+public class CannonBehaviour4 : MonoBehaviour
 {
-    public Animator animator;
-    public GameObject ui;
 
+    public GameObject ui;
+    public ParticleSystem smoke;
+    public AudioClip cannonShot;
     // Start is called before the first frame update
     void Start()
     {
-        HideUI();
+        HideUI4();
     }
 
     // Update is called once per frame
@@ -23,40 +24,41 @@ public class WhaleDive : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            ShowUI();
+            ShowUI4();
         }
     }
 
-    public void HideUI()
+    public void HideUI4()
     {
         ui.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
-    public void ShowUI()
+    public void ShowUI4()
     {
         ui.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
     }
 
-    public void Dive()
+    public void ShootCannon4()
     {
-        animator.SetTrigger("Dive");
+        smoke.Play();
+        gameObject.GetComponent<AudioSource>().PlayOneShot(cannonShot);
     }
 
-    public void PressYes()
+    public void PressYes4()
     {
-        HideUI();
-        Dive();
+        HideUI4();
+        ShootCannon4();
     }
 
-    public void PressNo()
+    public void PressNo4()
     {
-        HideUI();
-
+        HideUI4();
     }
-
 }
+
