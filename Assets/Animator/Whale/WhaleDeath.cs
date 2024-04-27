@@ -6,7 +6,8 @@ public class WhaleDeath : MonoBehaviour
 {
     public Animator animator;
     public GameObject ui;
-
+    public ParticleSystem smoke;
+    public AudioClip cannonShot;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class WhaleDeath : MonoBehaviour
     public void HideUI()
     {
         ui.SetActive(false);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
     }
@@ -38,8 +39,14 @@ public class WhaleDeath : MonoBehaviour
     public void ShowUI()
     {
         ui.SetActive(true);
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+    }
+
+    public void ShootCannon2()
+    {
+        smoke.Play();
+        gameObject.GetComponent<AudioSource>().PlayOneShot(cannonShot);
     }
 
     public void Death()
@@ -51,6 +58,8 @@ public class WhaleDeath : MonoBehaviour
     {
         HideUI();
         Death();
+        ShootCannon2();
+
     }
 
     public void PressNo()
