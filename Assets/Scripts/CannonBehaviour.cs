@@ -8,6 +8,8 @@ public class CannonBehaviour : MonoBehaviour
     public GameObject ui;
     public ParticleSystem smoke;
     public AudioClip cannonShot;
+    public AudioClip whaleGrowl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class CannonBehaviour : MonoBehaviour
     {
         smoke.Play();
         gameObject.GetComponent<AudioSource>().PlayOneShot(cannonShot);
+        gameObject.GetComponent<AudioSource>().PlayOneShot(whaleGrowl);
+
     }
 
     public void PressYes()

@@ -7,6 +7,8 @@ public class ChestBehaviour : MonoBehaviour
 
     public Animator animator;
     public GameObject ui;
+    public AudioClip chestOpen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,8 @@ public class ChestBehaviour : MonoBehaviour
     public void OpenChest()
     {
         animator.SetTrigger("Open");
+        gameObject.GetComponent<AudioSource>().PlayOneShot(chestOpen);
+
     }
 
     public void PressYes()

@@ -6,6 +6,8 @@ public class WhaleDive : MonoBehaviour
 {
     public Animator animator;
     public GameObject ui;
+    public AudioClip whaleDiveAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,8 @@ public class WhaleDive : MonoBehaviour
     public void Dive()
     {
         animator.SetTrigger("Dive");
+        gameObject.GetComponent<AudioSource>().PlayOneShot(whaleDiveAudio);
+
     }
 
     public void PressYes()
