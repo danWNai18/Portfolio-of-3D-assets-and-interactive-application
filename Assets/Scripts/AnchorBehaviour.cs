@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RudderBehaviour : MonoBehaviour
+public class AnchorBehaviour : MonoBehaviour
 {
 
     public Animator animator;
     public GameObject ui;
-    public AudioClip rudderAudio;
+    public AudioClip anchorControlAudio;
 
 
     // Start is called before the first frame update
@@ -45,18 +45,17 @@ public class RudderBehaviour : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void RotateRudder()
+    public void RotateAnchorControl()
     {
-        animator.SetTrigger("Interact");
-        gameObject.GetComponent<AudioSource>().PlayOneShot(rudderAudio);
+        animator.SetTrigger("Rotate");
+        gameObject.GetComponent<AudioSource>().PlayOneShot(anchorControlAudio);
 
     }
 
     public void PressYes()
     {
         HideUI();
-        RotateRudder();
-
+        RotateAnchorControl();
     }
 
     public void PressNo()
