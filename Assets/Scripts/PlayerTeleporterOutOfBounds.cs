@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerTeleporterOutOfBounds : MonoBehaviour
 {
-    public GameObject playerTeleporter;
+
+    public CharacterController player;
+    public Transform teleportPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,12 @@ public class PlayerTeleporterOutOfBounds : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            transform.position = new Vector3(-3, -2, 1);
+            player.enabled = false; 
+            other.transform.position = teleportPoint.position;
+            player.enabled = true;
+            print("collided");
         }
+        print("helpehlpe");
+
     }
 }
