@@ -8,6 +8,7 @@ public class AnchorBehaviour : MonoBehaviour
     public Animator animator;
     public GameObject ui;
     public AudioClip anchorControlAudio;
+    public ParticleSystem shine;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,8 @@ public class AnchorBehaviour : MonoBehaviour
     {
         HideUI();
         RotateAnchorControl();
+        shine.Stop();
+
     }
 
     public void PressNo()
