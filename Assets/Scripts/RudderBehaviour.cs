@@ -8,6 +8,7 @@ public class RudderBehaviour : MonoBehaviour
     public Animator animator;
     public GameObject ui;
     public AudioClip rudderAudio;
+    public ParticleSystem shine;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,7 @@ public class RudderBehaviour : MonoBehaviour
     {
         HideUI();
         RotateRudder();
+        shine.Stop();
 
     }
 

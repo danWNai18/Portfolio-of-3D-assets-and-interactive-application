@@ -6,12 +6,15 @@ public class BananaBehaviour : MonoBehaviour
 {
 
     public GameObject ui;
+    public Renderer BananaObject;
     public AudioClip bananaEatAudio;
+    public ParticleSystem shine;
+
     // Start is called before the first frame update
     void Start()
     {
         HideUI();
-
+        BananaObject = this.gameObject.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -53,6 +56,8 @@ public class BananaBehaviour : MonoBehaviour
     {
         HideUI();
         EatBanana();
+        shine.Stop();
+        BananaObject.enabled = !BananaObject.enabled;
     }
 
     public void PressNo()

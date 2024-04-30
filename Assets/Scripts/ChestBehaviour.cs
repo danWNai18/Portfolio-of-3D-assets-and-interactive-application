@@ -8,6 +8,7 @@ public class ChestBehaviour : MonoBehaviour
     public Animator animator;
     public GameObject ui;
     public AudioClip chestOpen;
+    public ParticleSystem shine;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,7 @@ public class ChestBehaviour : MonoBehaviour
     {
         HideUI();
         OpenChest();
+        shine.Stop();
     }
 
     public void PressNo()
