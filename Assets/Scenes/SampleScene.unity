@@ -9776,7 +9776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490088, guid: a9892f6a83fd8d4468ce0c8a3d09d3cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.7
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 490088, guid: a9892f6a83fd8d4468ce0c8a3d09d3cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11433,7 +11433,7 @@ GameObject:
   - component: {fileID: 338096642}
   - component: {fileID: 338096641}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: SkyBoxManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42176,7 +42176,7 @@ Transform:
   m_GameObject: {fileID: 769438036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 8.25, z: 2.3}
+  m_LocalPosition: {x: 3.53, y: 8.25, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62752,7 +62752,7 @@ GameObject:
   - component: {fileID: 1112971980}
   - component: {fileID: 1112971985}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: PlayerTeleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62852,8 +62852,8 @@ Transform:
   m_GameObject: {fileID: 1112971979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.54, y: -6.66, z: -2.29}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalPosition: {x: -3.54, y: -17.2, z: -1.9}
+  m_LocalScale: {x: 68.92296, y: 1, z: 42.13241}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131817,7 +131817,7 @@ MonoBehaviour:
   animator: {fileID: 2000569513}
   ui: {fileID: 1680161710}
   chestOpen: {fileID: 8300000, guid: f35d43ff7ba03bc4394c54100a62f436, type: 3}
-  shine: {fileID: 0}
+  shine: {fileID: 466800936}
 --- !u!95 &2000569513
 Animator:
   serializedVersion: 5
